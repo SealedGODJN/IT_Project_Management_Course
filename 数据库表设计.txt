@@ -1,0 +1,85 @@
+Mandarin-Library Automation 2019
+实体：
+
+Admin
+	-username
+	-password
+	-adminId（如果只有一个超管，是否需要主码限制？拿username当作主码？）
+
+Librarian
+	-username
+	-password
+	-librarianId
+
+LibraryIncomeHistory（每月/每周/每日收入可以通过函数计算出来）
+	-totalDeposit
+	-totalFine
+
+Reader
+	-username
+	-password（默认为12345678）
+	-email
+	-phoneNumber
+	-borrowBookNumber
+	-createDate
+	-depositState
+
+Book
+	-bookNo
+	-ISBN
+	-title
+	-author
+	-publisher
+	-description
+	-reservationState
+	-borrowState
+	-bookLocation(格式：楼层+书架+区号)
+	-price
+	-categoryNo
+	-barcode（是否需要?）
+
+Book_Borrow _record（待删除）
+	-lastBorrowDate
+	-bookId
+
+Book_Return_record（待删除）
+	-lastReturnDate
+	-bookId
+
+
+BookDeleteRecord
+	-deleteDate
+	-librarianId
+	-bookId
+
+ReaderBorrowRecord(是否添加书籍到期天数？)
+	-borrowNo
+	-borrowDate
+	-readerId
+	-bookId
+	-fineValue(默认为0)（是否需要？可以通过借出日期和函数计算得出）
+
+ReaderReturnRecord
+	-returnNo
+	-returnDate
+	-readerId
+	-bookId
+
+ReaderFineValue（是否要通过函数或者视图来实现？）
+	-totalFineValue(默认为0)
+
+Category
+	-categoryNo
+	-categoryName
+	-subCategoryNo(作为外键指向自己)
+
+Announcement
+	-no
+	-title
+	-content
+	-createDate
+	-librarianId
+
+注意：
+有些账户要设置访问权限和加密函数
+
