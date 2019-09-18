@@ -9,20 +9,21 @@ Admin
 Librarian
 	-username
 	-password
-	-librarianId
+	-librarianId(default:00010001)
 
 LibraryIncomeHistory（每月/每周/每日收入可以通过函数计算出来）
 	-totalDeposit
 	-totalFine
 
 Reader
+	-readerId
 	-username
 	-password（默认为12345678）
 	-email
 	-phoneNumber
 	-borrowBookNumber
 	-createDate
-	-depositState
+	-fineState
 
 Book
 	-bookNo
@@ -33,7 +34,7 @@ Book
 	-description
 	-reservationState
 	-borrowState
-	-bookLocation(格式：楼层+书架+区号)
+	-location(格式：楼层+书架+区号)
 	-price
 	-categoryNo
 	-barcode（是否需要?）
@@ -56,14 +57,14 @@ ReaderBorrowRecord(是否添加书籍到期天数？)
 	-borrowNo
 	-borrowDate
 	-readerId
-	-bookId
+	-bookNo
 	-fineValue(默认为0)（是否需要？可以通过借出日期和函数计算得出）
 
 ReaderReturnRecord
 	-returnNo
 	-returnDate
 	-readerId
-	-bookId
+	-bookNo
 
 ReaderFineValue（是否要通过函数或者视图来实现？）
 	-totalFineValue(默认为0)
