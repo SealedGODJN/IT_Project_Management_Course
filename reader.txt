@@ -1,0 +1,9 @@
+reader
+ID int(6) not null auto_increment primary key
+account status varchar(10)
+name varchar(10) binary not null
+password varchar(20) not null
+fine to pay int(6)
+e-mail  varchar(20) binary not null
+the ID of books borrowed int(8)
+the ID of books returned int(8)

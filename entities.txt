@@ -1,0 +1,22 @@
+图书管理员
+
+实体：
+
+Book(Strong Entity)
+	- No[Primary Key]	INT
+	- Title		CHAR(50)
+	- Author		CHAR(50)
+	- Publisher	CHAR(50)
+	- Description	VARCHAR(500)
+	- BorrowingCondition	BOOL
+	- fine		INT
+
+BorrowRecord(Weak Entity)
+	- No[Foreign Key]		INT
+	- Borrower[Foreign Key]	INT
+	- BorrowingDate		DATE
+
+ReturnRecord(Weak Entity)
+	- No[Foreign Key] 		INT
+	- Returner[Foreign Key]	INT
+	- ReturnDate		DATE
