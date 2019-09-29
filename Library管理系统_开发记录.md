@@ -38,18 +38,34 @@
 - [ ] admin个人中心页面——改admin的密码+注册Librarian账号
 - [ ] 找回密码界面（从“普通用户登录界面”跳转）（验证电子邮箱和手机号？）
 - [ ]  注册读者账号（只对图书馆管理员开发显示）+更改个人资料（读者）——普通用户个人中心页面（从首页跳转）
-- [ ] 首页（除了几条超链接，其他都是空白的）
+- [ ] 首页（顶部导航栏+search框）
 
 
 
-## 4、数据库设计更改：（2019.9.23）
+## 4、数据库设计更改：
 
-1. 在表book_delete_record中，添加description属性——描述删除书的原因
-2. 
+1. 在表book_delete_record中，添加description属性——描述删除书的原因（2019.9.23）
+2. 对于BaseEntity中的公共属性id，它的数据结构是long，能够实现新增项自动生成自增主键(2019.9.26)
+3. BaseEntity中的公共属性只保留id，移除createTime（因为不是每个表都需要这个属性）(2019.9.25)
+4. 赵海棠-建议：表readerBorrowRecord和readerReturnRecord合并为一个表readerBookRecord，保留不同的属性(2019.9.26)
+5. 孙荣璟-建议：表readerBookRecord应添加一个属性——应还日期deadline（因为读者可以续借，使原本30天的借阅期延长）（2019.9.26）
 
 
 
+## 5、SSH框架配置
+
+1. struts.xml的配置：
+2. hibernate.cfg.xml的配置：
 
 
 
+## 6、register reader功能实现——问题记录
+
+1. 记录：利用struts2标签，不能显示reader的注册信息（2019.9.26-9.27）
+2. 记录：利用按钮实现显示reader的注册信息，在示例中实现显示reader的注册信息；（2019.9.27 20:00）
+3. 问题：调用sql语句，未读取出对应的reader的注册信息
+
+图片描述：
+
+![1569592982839](C:\Users\HJN\AppData\Roaming\Typora\typora-user-images\1569592982839.png)
 

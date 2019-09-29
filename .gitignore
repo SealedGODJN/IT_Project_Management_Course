@@ -818,3 +818,8 @@ Downloads/paperplane/WebRoot/webapp/styles.js
 Downloads/paperplane/WebRoot/webapp/vendor/promise.js
 *.xlsx
 *.pdf
+*.exe
+*.txt
+*.docx
+*.rar
+*.png
